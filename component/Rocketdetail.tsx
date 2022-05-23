@@ -5,7 +5,7 @@ interface objIdRocket {
   idRocket?: string;
 }
 
-const Rocketdetail = (props: objIdRocket) => {
+const Rocketdetail: any = (props: objIdRocket) => {
   // console.log(props.idRocket);
   let column: any = [
     { title: "Name", dataIndex: "name", key: "name" },
@@ -54,13 +54,7 @@ const Rocketdetail = (props: objIdRocket) => {
     <>
       {/* <label>{data.rocket ? data.rocket.description : ""}</label> */}
       {data.rocket ? (
-        <Table
-          columns={column}
-          dataSource={dataRocketDetail}
-          onChange={() => {
-            console.log(6666);
-          }}
-        />
+        <Table columns={column} dataSource={dataRocketDetail} />
       ) : (
         ""
       )}

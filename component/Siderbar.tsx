@@ -6,7 +6,7 @@ import { ItemType } from "antd/lib/menu/hooks/useItems";
 import Rocketdetail from "./Rocketdetail";
 const { Header, Sider, Content } = Layout;
 
-const Siderbar = () => {
+const Siderbar: any = () => {
   const [idRocket, setidRocket] = useState("");
   const getRocket = gql`
     query GetRocket {
