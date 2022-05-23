@@ -51,19 +51,27 @@ const Siderbar = () => {
   return (
     <>
       <Layout style={{ margin: "20px" }}>
-        <Sider trigger={null} collapsible>
-          <div className="logo" />
-          <Menu
-            theme="dark"
-            mode="inline"
-            defaultSelectedKeys={["0"]}
-            items={rocketData}
-            onClick={(event) => {
-              onClickRocket(event.key);
-            }}
-          />
-        </Sider>
-        <Rocketdetail idRocket={idRocket} />
+        <Header className="header"></Header>
+        <Layout>
+          <Sider
+            trigger={null}
+            collapsible
+            style={{ backgroundColor: "coral" }}
+          >
+            <div className="logo" />
+            <Menu
+              theme="dark"
+              mode="inline"
+              defaultSelectedKeys={["0"]}
+              items={rocketData}
+              onClick={(event) => {
+                onClickRocket(event.key);
+              }}
+            />
+          </Sider>
+          <Rocketdetail idRocket={idRocket} />
+        </Layout>
+
         {/* <Layout className="site-layout">
           <Header
             className="site-layout-background"
