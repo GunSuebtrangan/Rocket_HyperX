@@ -65,8 +65,8 @@ const Siderbar: any = () => {
               style={{
                 height: "100%",
               }}
-              defaultSelectedKeys={["0"]}
               items={rocketData}
+              defaultOpenKeys={["Rocket01"]}
               onClick={(event) => {
                 onClickRocket(event.key);
               }}
