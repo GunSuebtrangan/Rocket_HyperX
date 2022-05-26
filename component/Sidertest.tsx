@@ -1,7 +1,6 @@
 import "antd/dist/antd.css";
 import { Layout, Menu } from "antd";
 import { useState, useEffect } from "react";
-import { atom, useRecoilState, useResetRecoilState } from "recoil";
 import { gql, useQuery } from "@apollo/client";
 import Link from "next/link";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
