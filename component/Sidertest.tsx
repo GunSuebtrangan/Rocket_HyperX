@@ -5,8 +5,7 @@ import { gql, useQuery } from "@apollo/client";
 import Link from "next/link";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
 import { useRouter } from "next/router";
-// import Test from "./Test";
-import { nameState } from "../states/dataTestRecoil";
+
 interface gqlDataRockets {
   id: string;
   name: string;
