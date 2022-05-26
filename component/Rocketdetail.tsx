@@ -100,7 +100,7 @@ const Rocketdetail: any = (props: objIdRocket) => {
         engine_layout: data.rocket.engines.layout,
       },
     ];
-    console.log(data);
+    // console.log("detail", data);
   }
   // console.log("data", data);
   return (
