@@ -70,6 +70,7 @@ const Launch = () => {
                 key={images[0]}
                 src={images[0]}
                 width={100}
+                key={images[0]}
                 preview={{
                   visible: false,
                 }}
@@ -86,7 +87,9 @@ const Launch = () => {
                     onVisibleChange: (vis) => setVisible(vis),
                   }}
                 >
-                  {images.map((value: string) => {
+
+                  {images.map((value: any) => {
+
                     return <Image src={value} key={value} />;
                   })}
                 </Image.PreviewGroup>
