@@ -54,6 +54,7 @@ const Launch = () => {
               <Image
                 src={images[0]}
                 width={100}
+                key={images[0]}
                 preview={{
                   visible: false,
                 }}
@@ -71,7 +72,7 @@ const Launch = () => {
                   }}
                 >
                   {images.map((value: any) => {
-                    return <Image src={value} />;
+                    return <Image src={value} key={value} />;
                   })}
                 </Image.PreviewGroup>
               </div>
