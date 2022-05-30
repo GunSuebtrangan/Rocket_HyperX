@@ -21,6 +21,7 @@ const Sidertest = ({ children }: any) => {
   // const [test, settest] = useRecoilState(nameState);
   const router = useRouter();
   let keypath;
+  let id;
   const getRocket = gql`
     query GetRocket {
       rockets {
@@ -69,12 +70,14 @@ const Sidertest = ({ children }: any) => {
               // console.log(event);
               if (event.keyPath.length === 1) {
                 keypath = event.keyPath[0];
+                id = event.key;
               } else {
                 keypath = event.keyPath[1];
+                id = event.keyPath[1];
               }
               // console.log(keypath);
               console.log("event", event);
-              router.push(`/${keypath}/${event.key}`);
+              router.push(`/${keypath}/${id}`);
             }}
           />
         </Sider>

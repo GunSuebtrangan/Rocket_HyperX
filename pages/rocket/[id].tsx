@@ -20,7 +20,7 @@ interface gqlDataRockets {
   description: string;
   active: boolean;
 }
-const Rocketdetail = (props: objIdRocket) => {
+const Rocketdetail = () => {
   const router = useRouter();
   const { id } = router.query;
   let dataRocketDetail: gqlDataRockets[] = [];
@@ -134,6 +134,7 @@ const Rocketdetail = (props: objIdRocket) => {
             },
           }}
           dataSource={dataRocketDetail}
+          pagination={false}
         />
       ) : (
         ""
