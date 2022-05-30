@@ -18,6 +18,7 @@ interface Arr {
 }
 const Launch = () => {
   const [visible, setVisible] = useState(false);
+  console.log(333);
   let arr: Array<Arr> = [];
   const getLaunchData = gql`
     query GetLaunch {
