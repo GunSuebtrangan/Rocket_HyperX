@@ -77,10 +77,10 @@ const Ships = () => {
   return (
     <>
       {Picture.length !== 0 ? (
-        Picture.map((value: Objships) => {
+        Picture.map((value: Objships, index) => {
           return (
-            <div>
-              <Image src={value.image} key={value.name} />
+            <div key={index}>
+              <Image src={value.image} />
               <label>{value.name}</label>
             </div>
           );

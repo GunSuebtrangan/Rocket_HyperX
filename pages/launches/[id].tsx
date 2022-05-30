@@ -1,10 +1,25 @@
 import { gql, useQuery } from "@apollo/client";
 import { Table, Image, Spin } from "antd";
 import { useState } from "react";
-
+interface objLaunch {
+  id: string;
+  details: string;
+  mission_name: string;
+  links: { flickr_images: string };
+  launch_year: string;
+  launch_success: boolean;
+}
+interface Arr {
+  key: string;
+  images: any;
+  mission_name: string;
+  details: string;
+  launch_year: string;
+}
 const Launch = () => {
   const [visible, setVisible] = useState(false);
-  let arr: any = [];
+  console.log(333);
+  let arr: Array<Arr> = [];
   const getLaunchData = gql`
     query GetLaunch {
       launches {
@@ -24,7 +39,7 @@ const Launch = () => {
   if (error) return `Error! ${error.message}`;
   if (data) {
     // console.log(data);
-    data.launches.map((value: any) => {
+    data.launches.map((value: objLaunch) => {
       arr.push({
         key: value.id,
         images: value.links.flickr_images,
@@ -52,6 +67,7 @@ const Launch = () => {
           render: (_, { images }) => (
             <>
               <Image
+                key={images[0]}
                 src={images[0]}
                 width={100}
                 key={images[0]}
@@ -71,7 +87,9 @@ const Launch = () => {
                     onVisibleChange: (vis) => setVisible(vis),
                   }}
                 >
+
                   {images.map((value: any) => {
+
                     return <Image src={value} key={value} />;
                   })}
                 </Image.PreviewGroup>
