@@ -11,7 +11,7 @@ interface objLaunch {
 }
 interface Arr {
   key: string;
-  images: Array<string> | string;
+  images: any;
   mission_name: string;
   details: string;
   launch_year: string;
@@ -85,13 +85,8 @@ const Launch = () => {
                     onVisibleChange: (vis) => setVisible(vis),
                   }}
                 >
-<<<<<<< Updated upstream
-                  {images.map((value: any) => {
-                    return <Image src={value} />;
-=======
                   {images.map((value: string) => {
                     return <Image src={value} key={value} />;
->>>>>>> Stashed changes
                   })}
                 </Image.PreviewGroup>
               </div>
